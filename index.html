@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Chaska Empleo UC: plataforma universitaria de oportunidades laborales seguras en Cusco.">
+<title>Chaska Empleo UC | Oportunidades seguras</title>
+<style>
+:root{--primary:#1e3a8a;--primary2:#2563eb;--secondary:#0284c7;--accent:#15803d;--bg:#f4f7fb;--text:#0f172a;--muted:#64748b;--danger:#b91c1c;--border:#dbe3ee;--purple:#702670;--gold:#d97706}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+button,input,select,textarea{font:inherit}button{cursor:pointer}header{position:sticky;top:0;z-index:20;background:linear-gradient(120deg,var(--primary),var(--secondary));color:white;padding:12px clamp(14px,4vw,34px);display:flex;align-items:center;gap:14px;box-shadow:0 4px 16px #0f172a20}
+.brand{font-size:1.12rem;font-weight:850;cursor:pointer;white-space:nowrap}.menu-btn{border:1px solid #ffffff55;background:#ffffff18;color:white;border-radius:10px;padding:8px 11px;font-size:1.2rem}.top-links{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}.top-links button{background:transparent;color:white;border:1px solid transparent;padding:8px 11px;border-radius:9px;font-weight:650}.top-links button:hover,.top-links button.active{background:#ffffff2b}
+main{max-width:1120px;margin:26px auto;padding:0 17px;min-height:65vh}.page{display:none}.page.active{display:block}.hero,.card,.tile,.job,.profile-card{background:white;border:1px solid var(--border);border-radius:17px;box-shadow:0 5px 20px #0f172a08}.hero{text-align:center;padding:clamp(28px,6vw,58px) 22px;background:linear-gradient(135deg,#fff,#eaf3ff)}.hero h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;color:var(--primary);margin:15px 0}.hero p{max-width:760px;margin:0 auto 22px;color:#475569;font-size:1.06rem}.eyebrow,.badge{display:inline-block;border-radius:999px;padding:5px 11px;font-size:.8rem;font-weight:750;background:#e0f2fe;color:#075985}.badge.green{background:#dcfce7;color:#166534}.badge.gold{background:#fef3c7;color:#92400e}.badge.purple{background:#f3e8ff;color:#6b21a8}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.btn{border:0;border-radius:9px;background:var(--primary);color:white;padding:10px 15px;font-weight:700}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:var(--secondary)}.btn.green{background:var(--accent)}.btn.gray{background:#64748b}.btn.purple{background:var(--purple)}.btn.red{background:var(--danger)}.btn.outline{background:white;color:var(--primary);border:1px solid var(--primary)}.btn:disabled{opacity:.55;cursor:not-allowed}
+.section-title{color:var(--primary);margin:30px 0 14px}.tiles,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:15px}.tile{padding:20px}.card{padding:clamp(17px,4vw,27px);margin-bottom:17px}.card h2,.section-title{color:var(--primary)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{margin-bottom:13px}.field.full{grid-column:1/-1}.field label{display:block;font-weight:700;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:10px 11px;border:1px solid #cbd5e1;border-radius:8px;background:white}.hint{font-size:.85rem;color:var(--muted)}.feedback{margin-top:12px;font-weight:700}.feedback.error{color:var(--danger)}.feedback.success{color:var(--accent)}.notice{padding:12px 14px;border-radius:10px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;margin:13px 0}.warning{background:#fff7ed;border-color:#fed7aa;color:#9a3412}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}.tab-panel{display:none}.tab-panel.active{display:block}.job{padding:18px;margin:13px 0}.job h3{margin:8px 0;color:var(--primary)}.job p{margin:7px 0;color:#475569}.job-details{display:none;border-top:1px solid var(--border);margin-top:13px;padding-top:12px}.job-details.open{display:block}.job-details ul{margin:7px 0;padding-left:21px}.job-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.list-item{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:9px;margin:8px 0}.premium{background:linear-gradient(135deg,#fff7db,#ffedb0);border:1px solid #f2c35c;border-radius:14px;padding:20px}.plan{background:white;border:1px solid var(--border);border-radius:13px;padding:17px}.plan h3{margin:5px 0;color:var(--primary)}.price{font-size:1.7rem;font-weight:850;color:var(--primary)}.profile-layout{display:grid;grid-template-columns:250px 1fr;gap:17px}.profile-card{padding:20px;text-align:center}.avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;background:#e2e8f0;border:3px solid white;box-shadow:0 2px 10px #0002}.avatar-placeholder{width:112px;height:112px;border-radius:50%;background:#e2e8f0;display:grid;place-items:center;font-size:2.5rem;margin:auto}.chat{background:#efeae2;border-radius:12px;padding:14px;max-width:720px}.bubble{padding:11px 13px;background:white;border-radius:10px;margin:8px 0;max-width:90%}.bubble.bot{background:#e7fce3;border-left:4px solid var(--accent)}.chat-form{display:flex;gap:8px;margin-top:10px}.chat-form input{flex:1;min-width:0;padding:11px;border:1px solid #cbd5e1;border-radius:8px}.drawer-backdrop{position:fixed;inset:0;background:#0f172a70;z-index:29;display:none}.drawer{position:fixed;top:0;left:0;bottom:0;width:min(330px,86vw);background:white;z-index:30;padding:18px;box-shadow:8px 0 30px #0002;transform:translateX(-105%);transition:transform .22s;overflow:auto}.drawer.open{transform:translateX(0)}.drawer-backdrop.open{display:block}.drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.drawer-item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;background:white;padding:12px;border-radius:9px;color:var(--text);font-weight:650}.drawer-item:hover{background:#eff6ff;color:var(--primary)}.drawer-item span{font-size:1.2rem;width:25px}.empty{padding:15px;background:#f8fafc;border:1px dashed var(--border);border-radius:10px;color:var(--muted)}footer{text-align:center;background:#e2e8f0;color:#475569;padding:22px;margin-top:35px;font-size:.88rem}.hidden{display:none!important}
+@media(max-width:760px){header{flex-wrap:wrap}.brand{font-size:1rem}.top-links{width:100%;justify-content:center;margin:0}.top-links button{padding:7px 8px;font-size:.85rem}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.profile-layout{grid-template-columns:1fr}.chat-form{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <button class="menu-btn" id="menuOpen" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <div class="brand" data-page="home">🌟 Chaska Empleo UC</div>
+  <nav class="top-links" aria-label="Navegación principal">
+    <button type="button" data-page="home" class="active">Inicio</button>
+    <button type="button" data-page="requisitos">Requisitos</button>
+    <button type="button" data-page="auth">Registro / Ingresar</button>
+    <button type="button" data-page="dashboard" id="nav-dashboard">Plataforma 🔒</button>
+  </nav>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="drawer" aria-label="Menú de usuario">
+  <div class="drawer-head"><strong>🌟 Chaska Empleo UC</strong><button class="btn gray" id="menuClose" type="button">✕</button></div>
+  <div id="drawerUser" class="notice">Inicia sesión para acceder a tu perfil.</div>
+  <button class="drawer-item" data-dash-tab="profile"><span>👤</span>Mi perfil</button>
+  <button class="drawer-item" data-dash-tab="cat"><span>💼</span>Catálogo de empleos</button>
+  <button class="drawer-item" data-dash-tab="applications"><span>📨</span>Mis postulaciones</button>
+  <button class="drawer-item" data-dash-tab="shifts"><span>🗓️</span>Mis turnos</button>
+  <button class="drawer-item" data-dash-tab="bot"><span>🤖</span>Chaska Bot (IA)</button>
+  <button class="drawer-item" data-dash-tab="premium"><span>⭐</span>Planes y Tokens</button>
+  <button class="drawer-item" data-dash-tab="references"><span>🌟</span>Referencias y reputación</button>
+  <button class="drawer-item" data-dash-tab="qr"><span>📍</span>Asistencia y seguridad</button>
+  <button class="drawer-item" id="drawerLogout"><span>🚪</span>Cerrar sesión</button>
+</aside>
+<main>
+<section id="page-home" class="page active">
+  <div class="hero"><span class="eyebrow">Universidad Continental · Sede Cusco</span><h1>Encuentra oportunidades adaptadas a tus estudios</h1><p>Plataforma universitaria conectando estudiantes con micronegocios locales mediante turnos compatibles con horarios académicos.</p><div class="actions"><button class="btn green" data-page="requisitos">Conocer requisitos</button><button class="btn secondary" data-page="auth">Crear mi cuenta</button></div></div>
+  <h2 class="section-title">¿Cómo funciona Chaska Empleo UC?</h2>
+  <div class="tiles">
+    <article class="tile"><h3>🎓 Para estudiantes</h3><p>Explora turnos, revisa condiciones y postula a oportunidades compatibles.</p></article>
+    <article class="tile"><h3>🏪 Para comerciantes</h3><p>Publica necesidades de apoyo y encuentra estudiantes universitarios calificados.</p></article>
+    <article class="tile"><h3>🛡️ Trabajo seguro</h3><p>Información transparente sobre tareas, horarios, pagos y seguridad.</p></article>
+  </div>
+</section>
+<section id="page-requisitos" class="page">
+  <div class="card"><h2>Requisitos de participación</h2><ul><li>Correo institucional o personal válido con verificación.</li><li>Horario académico actualizado para validación de disponibilidad.</li><li>Compromiso con la puntualidad y las normas de seguridad del local.</li></ul><button class="btn green" data-page="auth">Comenzar registro</button></div>
+</section>
+<section id="page-auth" class="page">
+  <div class="card" style="max-width:760px;margin-inline:auto"><h2>Registro e ingreso</h2><div class="tabs"><button class="btn" data-auth-mode="registro" id="tab-reg">📝 Crear cuenta</button><button class="btn gray" data-auth-mode="login" id="tab-log">🔑 Iniciar sesión</button></div>
+    <form id="form-registro">
+      <div class="notice">Crea tu cuenta. Se enviará un código de verificación por correo electrónico.</div>
+      <div class="field"><label for="regTipo">Tipo de cuenta</label><select id="regTipo"><option value="estudiante">Estudiante</option><option value="comerciante">Comerciante / negocio</option></select></div>
+      <div class="form-grid">
+        <div class="field"><label for="regNombres">Nombres</label><input id="regNombres" required placeholder="Tus nombres"></div>
+        <div class="field"><label for="regApellidos">Apellidos</label><input id="regApellidos" required placeholder="Tus apellidos"></div>
+        <div class="field" id="cycleField"><label for="regCiclo">Ciclo académico</label><select id="regCiclo"><option value="1">1.º ciclo</option><option value="2">2.º ciclo</option><option value="3">3.º ciclo</option><option value="4">4.º ciclo</option><option value="5">5.º ciclo</option><option value="6">6.º ciclo</option></select></div>
+        <div class="field"><label for="regCarrera">Carrera / rubro</label><select id="regCarrera"><option>Derecho</option><option>Psicología</option><option>Administración</option><option>Contabilidad</option><option>Ingeniería de Sistemas</option><option>Ingeniería Civil</option><option>Arquitectura</option></select></div>
+        <div class="field"><label for="regEdad">Edad</label><input id="regEdad" type="number" min="16" max="99" required placeholder="Ej. 20"></div>
+        <div class="field"><label for="regTelefono">Teléfono</label><input id="regTelefono" type="tel" required placeholder="Ej. 987654321"></div>
+      </div>
+      <div class="field"><label for="regUsername">Nombre de usuario</label><input id="regUsername" required placeholder="Ej. josept_2026"></div>
+      <div class="field"><label for="regPassword">Contraseña (mínimo 10 caracteres)</label><input type="password" id="regPassword" required minlength="10"></div>
+      <div class="field"><label for="regEmail">Correo electrónico</label><input type="email" id="regEmail" required placeholder="correo@ejemplo.com"></div>
+      <button class="btn green" type="submit">Crear cuenta y verificar</button>
+    </form>
+    <form id="form-login" class="hidden">
+      <div class="field"><label for="logUsername">Usuario o correo</label><input id="logUsername" required></div>
+      <div class="field"><label for="logPassword">Contraseña</label><input type="password" id="logPassword" required></div>
+      <button class="btn" type="submit">Iniciar sesión</button>
+    </form>
+    <div id="authFeedback" class="feedback"></div>
+  </div>
+</section>
+<section id="page-dashboard" class="page">
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h2 style="margin:0">Mi espacio Chaska</h2><span class="badge green" id="userBadge">Cuenta</span><p class="hint" id="userPlanBadge">Plan Gratuito</p></div><button class="btn red" id="logout" type="button">Cerrar sesión</button></div>
+  <section id="tab-profile" class="tab-panel active">
+    <h3>Mi perfil</h3><div class="profile-layout">
+      <div class="profile-card"><div id="avatarHolder" class="avatar-placeholder">👤</div><h3 id="profileName">Tu nombre</h3><span class="badge" id="profilePlanBadge">Gratuito</span></div>
+      <div class="card" style="margin:0;box-shadow:none"><div class="form-grid">
+        <div class="field"><label for="profileAge">Edad</label><input id="profileAge" type="number"></div>
+        <div class="field"><label for="profilePhone">Teléfono</label><input id="profilePhone" type="tel"></div>
+        <div class="field"><label for="profileEmail">Correo electrónico</label><input id="profileEmail" type="email" readonly></div>
+        <div class="field"><label for="profileCareer">Carrera</label><input id="profileCareer" readonly></div>
+      </div><button class="btn green" id="saveProfile" type="button">Guardar cambios</button><div id="profileFeedback" class="feedback"></div></div>
+    </div>
+  </section>
+  <section id="tab-cat" class="tab-panel"><h3>Catálogo de oportunidades</h3><div class="field"><label for="jobSearch">Buscar puesto o negocio</label><input id="jobSearch" type="search" placeholder="Ej. cafetería, Wanchaq"></div><div id="jobs"></div></section>
+  <section id="tab-applications" class="tab-panel"><h3>Mis postulaciones</h3><div id="applications" class="empty">Todavía no has postulado.</div></section>
+  <section id="tab-shifts" class="tab-panel"><h3>Mis turnos</h3><div class="notice">El intercambio de turnos con otros estudiantes requiere plan <strong>Plus</strong> o superior.</div><div id="shiftsContent" class="empty">No tienes turnos confirmados.</div></section>
+  <section id="tab-bot" class="tab-panel"><h3>🤖 Chaska Bot (IA Integrada)</h3><div class="notice">Asistente conectado a OpenAI API. Tokens usados hoy: <span id="tokenCounter">0</span></div><div class="chat" id="chatMessages"><div class="bubble bot"><strong>Chaska Bot:</strong> ¡Hola! ¿En qué puedo ayudarte hoy con tus turnos y estudios en Cusco?</div></div><form class="chat-form" id="chatForm"><input id="chatInput" placeholder="Escribe tu consulta..." required><button class="btn" type="submit">Enviar</button></form></section>
+  
+  <section id="tab-premium" class="tab-panel">
+    <div class="premium"><h3>⭐ Planes y Tokens de IA</h3><p>Elige el plan que mejor se adapte a tus necesidades de organización y potencia con Chaska Bot.</p></div>
+    <div class="grid" style="margin-top:14px">
+      <article class="plan">
+        <span class="badge">S/ 0.00</span>
+        <h3>Plan Gratuito</h3>
+        <div class="price">S/ 0 / mes</div>
+        <ul>
+          <li>Catálogo completo de empleos.</li>
+          <li>Postulaciones estándar.</li>
+          <li><strong>10 tokens</strong> diarios de Chaska Bot (IA).</li>
+          <li><span style="color:var(--danger)">✕ Intercambio de turnos bloqueado</span></li>
+        </ul>
+        <button class="btn gray" disabled>Plan actual</button>
+      </article>
+      <article class="plan">
+        <span class="badge gold">S/ 9.90</span>
+        <h3>Chaska Básico+</h3>
+        <div class="price">S/ 9.90 / mes</div>
+        <ul>
+          <li>Alertas de nuevas oportunidades.</li>
+          <li>Perfil destacado en búsquedas.</li>
+          <li><strong>50 tokens</strong> diarios de Chaska Bot (IA).</li>
+          <li><span style="color:var(--danger)">✕ Intercambio de turnos bloqueado</span></li>
+        </ul>
+        <button class="btn purple choose-plan" data-plan="Básico+" data-price="9.90">Elegir Básico+</button>
+      </article>
+      <article class="plan">
+        <span class="badge green">S/ 19.90</span>
+        <h3>Chaska Plus</h3>
+        <div class="price">S/ 19.90 / mes</div>
+        <ul>
+          <li>Alertas prioritarias de turnos.</li>
+          <li><strong>🔓 Intercambio de turnos habilitado</strong> con otros estudiantes.</li>
+          <li><strong>200 tokens</strong> diarios de Chaska Bot (IA).</li>
+          <li>Soporte preferencial.</li>
+        </ul>
+        <button class="btn purple choose-plan" data-plan="Plus" data-price="19.90">Elegir Plus</button>
+      </article>
+    </div>
+    
+    <div class="card" style="margin-top:15px">
+      <h3>Checkout Demostrativo (Simulación de Pago)</h3>
+      <p id="selectedPlan" class="hint">Selecciona un plan arriba para continuar.</p>
+      <div class="field"><label for="paymentMethod">Método de pago</label><select id="paymentMethod"><option value="">Seleccionar método</option><option value="Yape">Yape (Código QR)</option><option value="Tarjeta">Tarjeta de Crédito / Débito</option></select></div>
+      
+      <!-- Contenedor Yape QR -->
+      <div id="yapeContainer" class="hidden notice" style="text-align:center">
+        <h4>Escanea el código QR con Yape</h4>
+        <div style="background:white;padding:15px;display:inline-block;border-radius:10px;border:1px solid #ccc;margin:10px 0;">
+          <div style="font-size:3rem">📱 [ QR SIMULADO YAPE ]</div>
+          <p class="hint">Beneficiario: Chaska Empleo UC S.A.C.</p>
+        </div>
+        <p>Una vez escaneado y pagado en tu app Yape, haz clic en confirmar pago.</p>
+      </div>
+
+      <!-- Contenedor Tarjeta -->
+      <div id="cardContainer" class="hidden notice">
+        <h4>Datos de la Tarjeta</h4>
+        <div class="field"><label>Número de Tarjeta</label><input type="text" placeholder="4152 3000 0000 0000" maxlength="19"></div>
+        <div class="form-grid">
+          <div class="field"><label>Expiración</label><input type="text" placeholder="MM/AA" maxlength="5"></div>
+          <div class="field"><label>CVV</label><input type="password" placeholder="123" maxlength="4"></div>
+        </div>
+      </div>
+
+      <button class="btn purple" id="payButton" type="button" disabled>Simular Pago y Activar Plan</button>
+      <div id="paymentFeedback" class="feedback"></div>
+    </div>
+  </section>
+  
+  <section id="tab-references" class="tab-panel"><h3>Referencias y reputación</h3><p class="hint">Evaluaciones emitidas por comercios tras completar turnos.</p></section>
+  <section id="tab-qr" class="tab-panel"><h3>Asistencia y seguridad</h3><button class="btn green" data-attendance="Entrada">Registrar entrada</button> <button class="btn secondary" data-attendance="Salida">Registrar salida</button><div id="qrResult" class="feedback"></div></section>
+</div>
+</section>
+</main>
+<footer><p>Chaska Empleo UC © 2026 · Plataforma de oportunidades laborales en Cusco</p></footer>
+<script>
+(function(){
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+let currentUser=null, selectedPlan=null;
+
+function showPage(name){$$('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));}
+function switchTab(name){$$('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));}
+function authMode(mode){$('#form-registro').classList.toggle('hidden',mode!=='registro');$('#form-login').classList.toggle('hidden',mode!=='login');}
+
+async function checkSession(){
+  const res = await fetch('/api/session');
+  const data = await res.json();
+  if(data.loggedIn){
+    currentUser = data.user;
+    updateUI();
+  }
+}
+
+function updateUI(){
+  $('#userBadge').textContent = currentUser.nombre;
+  $('#userPlanBadge').textContent = 'Plan: ' + currentUser.plan;
+  $('#profilePlanBadge').textContent = currentUser.plan;
+  $('#profileName').textContent = currentUser.nombre;
+  $('#profileAge').value = currentUser.edad || '';
+  $('#profilePhone').value = currentUser.telefono || '';
+  $('#profileEmail').value = currentUser.email;
+  $('#profileCareer').value = currentUser.carrera || 'Derecho';
+  $('#tokenCounter').textContent = currentUser.ai_tokens_used || 0;
+  showPage('dashboard');
+}
+
+$$('[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+$$('.drawer-item[data-dash-tab]').forEach(b=>b.addEventListener('click',()=>{if(!currentUser){showPage('auth');return;}showPage('dashboard');switchTab(b.dataset.dashTab);}));
+$$('[data-auth-mode]').forEach(b=>b.addEventListener('click',()=>authMode(b.dataset.authMode)));
+
+$('#form-registro').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const body = {
+    username: $('#regUsername').value.trim(),
+    email: $('#regEmail').value.trim().toLowerCase(),
+    password: $('#regPassword').value,
+    tipo: $('#regTipo').value,
+    first_name: $('#regNombres').value.trim(),
+    last_name: $('#regApellidos').value.trim(),
+    age: Number($('#regEdad').value),
+    phone: $('#regTelefono').value.trim(),
+    cycle: $('#regCiclo').value,
+    career: $('#regCarrera').value
+  };
+  const res = await fetch('/api/register', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+  const data = await res.json();
+  if(data.success){
+    currentUser = data.user;
+    updateUI();
+    alert('Cuenta creada con éxito. Se envió correo de verificación.');
+  } else {
+    $('#authFeedback').textContent = data.error;
+    $('#authFeedback').className = 'feedback error';
+  }
+});
+
+$('#form-login').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const username = $('#logUsername').value.trim();
+  const password = $('#logPassword').value;
+  const res = await fetch('/api/login', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({username, password})});
+  const data = await res.json();
+  if(data.success){
+    currentUser = data.user;
+    updateUI();
+  } else {
+    $('#authFeedback').textContent = data.error;
+    $('#authFeedback').className = 'feedback error';
+  }
+});
+
+$('#logout').addEventListener('click', async()=>{
+  await fetch('/api/logout', {method:'POST'});
+  currentUser = null;
+  showPage('auth');
+});
+
+$$('.choose-plan').forEach(b=>b.addEventListener('click',()=>{
+  selectedPlan = { name: b.dataset.plan, price: b.dataset.price };
+  $('#selectedPlan').textContent = `Plan ${selectedPlan.name} · S/ ${selectedPlan.price}`;
+  $('#payButton').disabled = false;
+}));
+
+$('#paymentMethod').addEventListener('change', e=>{
+  const val = e.target.value;
+  $('#yapeContainer').classList.toggle('hidden', val !== 'Yape');
+  $('#cardContainer').classList.toggle('hidden', val !== 'Tarjeta');
+});
+
+$('#payButton').addEventListener('click', async()=>{
+  if(!selectedPlan) return;
+  const res = await fetch('/api/upgrade-plan', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({planName: selectedPlan.name})});
+  const data = await res.json();
+  if(data.success){
+    currentUser.plan = data.plan;
+    updateUI();
+    $('#paymentFeedback').textContent = data.message;
+    $('#paymentFeedback').className = 'feedback success';
+  }
+});
+
+$('#chatForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const input = $('#chatInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  
+  const userB = document.createElement('div');
+  userB.className = 'bubble';
+  userB.textContent = 'Tú: ' + msg;
+  $('#chatMessages').append(userB);
+  input.value = '';
+
+  const res = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({message: msg})});
+  const data = await res.json();
+  
+  const botB = document.createElement('div');
+  botB.className = 'bubble bot';
+  botB.textContent = 'Chaska Bot: ' + (data.reply || data.error);
+  $('#chatMessages').append(botB);
+  if(data.tokensUsed){
+    $('#tokenCounter').textContent = data.tokensUsed;
+  }
+});
+
+checkSession();
+})();
+</script>
+</body>
+</html>
